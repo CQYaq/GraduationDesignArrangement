@@ -488,11 +488,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Learn\\论文\\GraduationDesignArrangementSystem\\Services\\GraduationDesignArrangementSystem.Web\\GraduationDesignArrangementSystem.Web.csproj",
+      "projectUniqueName": "D:\\QQ\\yaq\\GraduationDesignArrangement\\Services\\GraduationDesignArrangementSystem.Web\\GraduationDesignArrangementSystem.Web.csproj",
       "projectName": "GraduationDesignArrangementSystem.Web",
-      "projectPath": "E:\\Learn\\论文\\GraduationDesignArrangementSystem\\Services\\GraduationDesignArrangementSystem.Web\\GraduationDesignArrangementSystem.Web.csproj",
+      "projectPath": "D:\\QQ\\yaq\\GraduationDesignArrangement\\Services\\GraduationDesignArrangementSystem.Web\\GraduationDesignArrangementSystem.Web.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Learn\\论文\\GraduationDesignArrangementSystem\\Services\\GraduationDesignArrangementSystem.Web\\obj\\",
+      "outputPath": "D:\\QQ\\yaq\\GraduationDesignArrangement\\Services\\GraduationDesignArrangementSystem.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -559,7 +559,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
