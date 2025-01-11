@@ -1,0 +1,6 @@
+@GraduationDesignArrangementSystem.Web_HostAddress = http://localhost:5141
+
+GET {{GraduationDesignArrangementSystem.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
