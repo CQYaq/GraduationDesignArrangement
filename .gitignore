@@ -3,3 +3,15 @@
 ################################################################################
 
 /Services/.vs
+**/bin/
+**/obj/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.cache
+*.csproj.user
+*.sln.docstates
+*.pdb
+*.dll
+*.exe
