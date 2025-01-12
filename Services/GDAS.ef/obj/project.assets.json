@@ -1494,6 +1494,16 @@
             "rid": "win"
           }
         }
+      },
+      "GDAS.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/GDAS.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GDAS.Model.dll": {}
+        }
       }
     }
   },
@@ -3996,10 +4006,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "GDAS.Model/1.0.0": {
+      "type": "project",
+      "path": "../GDAS.Model/GDAS.Model.csproj",
+      "msbuildProject": "../GDAS.Model/GDAS.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "GDAS.Model >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.11"
@@ -4037,7 +4053,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Learn\\论文\\GraduationDesignArrangementSystem\\Services\\GDAS.Model\\GDAS.Model.csproj": {
+              "projectPath": "E:\\Learn\\论文\\GraduationDesignArrangementSystem\\Services\\GDAS.Model\\GDAS.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

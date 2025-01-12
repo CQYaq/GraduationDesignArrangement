@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GDAS.Model\GDAS.Model.csproj" />
+  </ItemGroup>
+
 </Project>
