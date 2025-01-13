@@ -7,12 +7,15 @@ namespace GDAS.Model
 {
     public class DefenseGroup : BaseModel
     {
-
+        public int DefensePlanId{get;set;}//答辩计划Id
         public string Name { get; set; } // 答辩组名称
         public string Leader { get; set; } // 组长
         public string Members { get; set; } // 组员（教师工号组用逗号‘,’分割）
         public DateTime DefenseTime { get; set; } // 答辩时间
         public string DefenseLocation { get; set; } // 答辩地点
+
+        //导航属性
+        public DefensePlan DefensePlan { get; set; }
 
         // 导航属性（如果使用实体关系）
         // public Teacher LeaderTeacher { get; set; } // 关联的组长教师实体（如果使用工号，则不需要此属性）
