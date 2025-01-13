@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GDAS.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5b69e990a5a3d78ff236670c5a01c6372beaafd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e7fbd2759ae72947d71098387e8f7abcfed8472")]
 [assembly: System.Reflection.AssemblyProductAttribute("GDAS.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GDAS.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
