@@ -16,5 +16,6 @@ namespace GDAS.Model
 
         //导航属性
         public UserInfo UserInfo { get; set; }
+
     }
 }

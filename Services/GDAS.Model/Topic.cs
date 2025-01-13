@@ -15,7 +15,7 @@ namespace GDAS.Model
         public string CourseName { get; set; } // 课题名称
 
         // 导航属性
-        public Student Student { get; set; } // 关联的学生实体
-        public Teacher Teacher { get; set; } // 关联的教师实体
+        public Student? Student { get; set; } // 关联的学生实体
+        public Teacher? Teacher { get; set; } // 关联的教师实体
     }
 }

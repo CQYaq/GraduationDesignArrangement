@@ -9,6 +9,9 @@ namespace GDAS.Model.Permissions
     {
         public int RoleId { get; set; }
         public int MenuId { get; set; }
+        //导航属性
+        public RoleInfo? RoleInfo { get; set; }
+        public MenuInfo? MenuInfo { get; set; }
 
     }
 }
