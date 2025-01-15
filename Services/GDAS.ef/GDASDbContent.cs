@@ -4,66 +4,86 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GDAS.ef;
 
-public class GDASDbContent:DbContext
+public class GDASDbContent : DbContext
 {
-    public GDASDbContent(){}
+    public GDASDbContent() { }
 
     #region 权限管理类
-    public DbSet<UserInfo> UserInfo{get;set;}
-    public DbSet<RoleInfo> RoleInfo{get;set;}
-     public DbSet<MenuInfo> MenuInfo{get;set;}
-    public DbSet<Role_Menu> RoLeMenu{get;set;}
+    public DbSet<UserInfo> UserInfo { get; set; }
+    public DbSet<RoleInfo> RoleInfo { get; set; }
+    public DbSet<MenuInfo> MenuInfo { get; set; }
+    public DbSet<Role_Menu> RoLeMenu { get; set; }
     #endregion
-   #region 主要类
-    public DbSet<Student> Student{get;set;}
-    public DbSet<Teacher> Teacher{get;set;}
-    public DbSet<Topic> Topic{get;set;}
-    public DbSet<Major> Major{get;set;}
-    public DbSet<DefensePlan> DefensePlan{get;set;}
-    public DbSet<DefenseGroup> DefenseGroup{get;set;}
-    public DbSet<StudentAssignment> StudentAssignment{get;set;}
+    #region 主要类
+    public DbSet<Student> Student { get; set; }
+    public DbSet<Teacher> Teacher { get; set; }
+    public DbSet<Topic> Topic { get; set; }
+    public DbSet<Major> Major { get; set; }
+    public DbSet<DefensePlan> DefensePlan { get; set; }
+    public DbSet<DefenseGroup> DefenseGroup { get; set; }
+    public DbSet<StudentAssignment> StudentAssignment { get; set; }
     #endregion
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         #region 权限部分
-        modelBuilder.Entity<UserInfo>(entity=>{
-            entity.HasOne(c => c.RoleInfo).WithMany(c => c.UserInfos).HasForeignKey(c=>c.RoleId);
+        modelBuilder.Entity<UserInfo>(entity =>
+        {
+            entity.HasOne(c => c.RoleInfo).WithMany(c => c.UserInfos).HasForeignKey(c => c.RoleId);
         });
-        modelBuilder.Entity<RoleInfo>(entity=>{
-            
+        modelBuilder.Entity<RoleInfo>(entity =>
+        {
+
         });
-        modelBuilder.Entity<MenuInfo>(entity=>{
-           
+        modelBuilder.Entity<MenuInfo>(entity =>
+        {
+
         });
-        modelBuilder.Entity<Role_Menu>(entity => {
-            entity.HasOne(c=>c.RoleInfo).WithMany(c=>c.Role_Menus).HasForeignKey(c=>c.RoleId);
+        modelBuilder.Entity<Role_Menu>(entity =>
+        {
+            entity.HasOne(c => c.RoleInfo).WithMany(c => c.Role_Menus).HasForeignKey(c => c.RoleId);
             entity.HasOne(c => c.MenuInfo).WithMany(c => c.Role_Menus).HasForeignKey(c => c.MenuId);
         });
         #endregion
         #region 主要部分
-        modelBuilder.Entity<Student>(entity => {
-            
+        // 配置 TPT 继承关系
+        modelBuilder.Entity<Student>(entity =>
+        {
+             entity.HasBaseType<UserInfo>();
         });
-        modelBuilder.Entity<Teacher>(entity => {
+        modelBuilder.Entity<Teacher>(entity =>
+        {
+            entity.HasBaseType<UserInfo>();
+        });
+
+        modelBuilder.Entity<Topic>(entity =>
+        {
+            entity.HasOne(c => c.Student).WithOne(c => c.Topic).HasForeignKey<Topic>(t => t.StudentId);
+            entity.HasOne(c => c.Teacher).WithMany(c => c.Topics).HasForeignKey(t => t.TeacherId);
+        });
+        modelBuilder.Entity<Major>(entity =>
+        {
 
         });
-        modelBuilder.Entity<Topic>(entity => {
+        modelBuilder.Entity<DefensePlan>(entity =>
+        {
 
         });
-        modelBuilder.Entity<Major>(entity => {
-
-        });
-        modelBuilder.Entity<DefensePlan>(entity => {
-
-        });
-        modelBuilder.Entity<DefenseGroup>(entity => {
+        modelBuilder.Entity<DefenseGroup>(entity =>
+        {
             entity.HasOne(c => c.DefensePlan).WithMany(c => c.DefenseGroups).HasForeignKey(c => c.DefensePlanId);
         });
-        modelBuilder.Entity<StudentAssignment>(entity => {
-            
+        modelBuilder.Entity<StudentAssignment>(entity =>
+        {
+
         });
         base.OnModelCreating(modelBuilder);
         #endregion
+    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+            optionsBuilder.UseSqlServer("Server=.;Database=GDASDB;Trusted_Connection=True;TrustServerCertifiCate=True;");
+        base.OnConfiguring(optionsBuilder);
     }
 
 }
